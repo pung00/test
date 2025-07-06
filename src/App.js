@@ -394,8 +394,8 @@ const App = () => {
   // 관리자 로그인
   const handleAdminLogin = () => {
     if (
-      adminCredentials.username === "admin" &&
-      adminCredentials.password === "admin123"
+      adminCredentials.username === process.env.REACT_APP_ADMIN_ID &&
+      adminCredentials.password === process.env.REACT_APP_ADMIN_PW
     ) {
       setIsAdmin(true);
       setShowAdminLogin(false);
@@ -857,7 +857,6 @@ const App = () => {
               )}
             </div>
             <div className="bg-gray-50 rounded-md p-4">
-              <strong className="text-gray-800 block mb-2">[7월 예정]</strong>
               <ul className="space-y-2">
                 {newsContent.map((item, index) => (
                   <li
@@ -973,9 +972,6 @@ const App = () => {
                   취소
                 </button>
               </div>
-            </div>
-            <div className="mt-4 text-sm text-gray-500">
-              <p>테스트 계정: admin / admin123</p>
             </div>
           </div>
         </div>
